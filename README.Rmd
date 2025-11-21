@@ -1,0 +1,87 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# sparseMethods
+<!-- badges: start -->
+
+<!-- badges: end -->
+
+# Description
+sparseMethods provides an S4 class, sparse_numeric, for storing numeric
+vectors by keeping only the nonzero entries and their positions, sparse vectors.
+The package implements:
+
+Arithmetic on sparse vectors: +, -, *
+
+Sparse functions:
+sparse_add(),
+sparse_sub(),
+sparse_mult(),
+sparse_crossprod(),
+
+Vector summaries:
+mean(),
+norm(),
+standardize(),
+
+Visualization with plot(),
+Custom printing via show()
+
+This package demonstrates how to define S4 classes, generics, and methods in R.
+
+# Installation
+You can install the development version of sparseMethods from GitHub using:
+
+r
+# install.packages("devtools")
+
+devtools::install_github("DanaNguyen18/sparseMethods")
+
+## Example
+
+This is a basic example showing you the methods. 
+
+```{r example}
+library(sparseMethods)
+
+# Create sparse vectors
+x <- as(c(1, 0, 3, 0, 5), "sparse_numeric")
+y <- as(c(0, 4, 0, 2, 1), "sparse_numeric")
+
+# Print the sparse vectors
+x
+y
+
+# Arithmetic
+x + y
+x - y
+x * y
+
+# Cross product (dot product)
+sparse_crossprod(x, y)
+
+# Means and norms
+mean(x)
+norm(x)
+
+# Standardization
+standardize(x)
+
+# Plot
+plot(x, y)
+
+#Show
+show(x)
+```
+

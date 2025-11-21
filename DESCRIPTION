@@ -1,0 +1,20 @@
+Package: sparseMethods
+Title: Sparse Vectors Class Methods
+Version: 0.0.0.9000
+Authors@R: 
+    person("Dana", "Nguyen", , "dananguyen@utexas.edu", role = c("aut", "cre"))
+Description: The package implements S4 class with numerous methods for sparse vectors. Sparse 
+  vectors are numeric vectors where the majority of the elements are zero. In our methods,
+  we do arthimetic methods using sparse representation in order to increase speed. There are
+  addition, subtraction, multiplication, and cross product methods for two sparse numeric vectors. There
+  is also mean, norm, and standarize methods for one sparse vector.
+License: MIT + file LICENSE
+Imports:
+    methods,
+    graphics
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
