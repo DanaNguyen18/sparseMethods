@@ -1,31 +1,47 @@
-# sparseMethods
+# Homework 6 R Package: Sparse Numeric Vector Class and Methods
 
 # Description
 
-sparseMethods provides an S4 class, sparse_numeric, for storing numeric
-vectors by keeping only the nonzero entries and their positions, sparse
-vectors. The package implements:
+`sparseMethods` provides an S4 class, `sparse_numeric`, for efficiently
+storing numeric vectors by keeping only the nonzero entries and their
+positions.
 
-Arithmetic on sparse vectors: +, -, \*
+The package implements:
 
-Sparse functions: sparse_add(), sparse_sub(), sparse_mult(),
-sparse_crossprod(),
+- Custom S4 class `sparse_numeric` for sparse vectors (`value`, `pos`,
+  `length`)
+- Arithmetic on sparse vectors: `+`, `-`, `*`
+- Sparse functions:
+  [`sparse_add()`](https://dananguyen18.github.io/sparseMethods/reference/sparse_add.md),
+  [`sparse_sub()`](https://dananguyen18.github.io/sparseMethods/reference/sparse_sub.md),
+  [`sparse_mult()`](https://dananguyen18.github.io/sparseMethods/reference/sparse_mult.md),
+  [`sparse_crossprod()`](https://dananguyen18.github.io/sparseMethods/reference/sparse_crossprod.md)
+- Vector summaries:
+  [`mean()`](https://dananguyen18.github.io/sparseMethods/reference/mean.md),
+  [`norm()`](https://dananguyen18.github.io/sparseMethods/reference/norm.md),
+  [`standardize()`](https://dananguyen18.github.io/sparseMethods/reference/standardize.md)
+- Visualization with
+  [`plot()`](https://rdrr.io/r/graphics/plot.default.html)
+- Custom printing via `show()`
+- Full reference documentation generated using **roxygen2**
+- Automated testing framework using **testthat**
+- A **pkgdown** website for easy navigation and examples
 
-Vector summaries: mean(), norm(), standardize(),
-
-Visualization with plot(), Custom printing via show()
-
-This package demonstrates how to define S4 classes, generics, and
-methods in R.
+This package successfully passes **R CMD check** with 0 errors, 0
+warnings, and 0 notes and achieves 95% test coverage.
 
 # Installation
 
-You can install the development version of sparseMethods from GitHub
+You can install the development version of **sparseMethods** from GitHub
 using:
 
-# install.packages(“devtools”)
-
-devtools::install_github(“DanaNguyen18/sparseMethods”)
+``` r
+# install.packages("devtools")
+devtools::install_github("DanaNguyen18/sparseMethods")
+#> Using GitHub PAT from the git credential store.
+#> Skipping install of 'sparseMethods' from a github remote, the SHA1 (13c416c9) has not changed since last install.
+#>   Use `force = TRUE` to force installation
+```
 
 ## Example
 
@@ -81,12 +97,19 @@ standardize(x)
 plot(x, y)
 ```
 
-![](reference/figures/README-example-1.png)
+![](reference/figures/README-unnamed-chunk-3-1.png)
 
 ``` r
 
-#Show
+# Show
 show(x)
 #> Here is an object of class 'sparse_numeric'
 #> The length is  5Pos:Value 1 : 1, Pos:Value 3 : 3, Pos:Value 5 : 5
 ```
+
+# PkgDown Website and License
+
+The pkgDown website can be accessed at:
+<http://dananguyen18.github.io/sparseMethods/>
+
+This package is released under the MIT license.

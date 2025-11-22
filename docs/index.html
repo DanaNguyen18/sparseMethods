@@ -46,7 +46,7 @@
 </nav><div class="container template-home">
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
-<div class="page-header"><h1 id="sparsemethods">sparseMethods<a class="anchor" aria-label="anchor" href="#sparsemethods"></a>
+<div class="page-header"><h1 id="homework-6-r-package-sparse-numeric-vector-class-and-methods">Homework 6 R Package: Sparse Numeric Vector Class and Methods<a class="anchor" aria-label="anchor" href="#homework-6-r-package-sparse-numeric-vector-class-and-methods"></a>
 </h1></div>
 <!-- badges: start -->
 
@@ -54,27 +54,43 @@
 <div class="section level1">
 <h1 id="description">Description<a class="anchor" aria-label="anchor" href="#description"></a>
 </h1>
-<p>sparseMethods provides an S4 class, sparse_numeric, for storing numeric vectors by keeping only the nonzero entries and their positions, sparse vectors. The package implements:</p>
-<p>Arithmetic on sparse vectors: +, -, *</p>
-<p>Sparse functions: sparse_add(), sparse_sub(), sparse_mult(), sparse_crossprod(),</p>
-<p>Vector summaries: mean(), norm(), standardize(),</p>
-<p>Visualization with plot(), Custom printing via show()</p>
-<p>This package demonstrates how to define S4 classes, generics, and methods in R.</p>
+<p><code>sparseMethods</code> provides an S4 class, <code>sparse_numeric</code>, for efficiently storing numeric vectors by keeping only the nonzero entries and their positions.</p>
+<p>The package implements:</p>
+<ul>
+<li>Custom S4 class <code>sparse_numeric</code> for sparse vectors (<code>value</code>, <code>pos</code>, <code>length</code>)</li>
+<li>Arithmetic on sparse vectors: <code>+</code>, <code>-</code>, <code>*</code>
+</li>
+<li>Sparse functions: <code><a href="reference/sparse_add.html">sparse_add()</a></code>, <code><a href="reference/sparse_sub.html">sparse_sub()</a></code>, <code><a href="reference/sparse_mult.html">sparse_mult()</a></code>, <code><a href="reference/sparse_crossprod.html">sparse_crossprod()</a></code>
+</li>
+<li>Vector summaries: <code><a href="reference/mean.html">mean()</a></code>, <code><a href="reference/norm.html">norm()</a></code>, <code><a href="reference/standardize.html">standardize()</a></code>
+</li>
+<li>Visualization with <code><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot()</a></code>
+</li>
+<li>Custom printing via <code>show()</code>
+</li>
+<li>Full reference documentation generated using <strong>roxygen2</strong>
+</li>
+<li>Automated testing framework using <strong>testthat</strong>
+</li>
+<li>A <strong>pkgdown</strong> website for easy navigation and examples</li>
+</ul>
+<p>This package successfully passes <strong>R CMD check</strong> with 0 errors, 0 warnings, and 0 notes and achieves 95% test coverage.</p>
 </div>
 <div class="section level1">
 <h1 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h1>
-<p>You can install the development version of sparseMethods from GitHub using:</p>
-</div>
-<div class="section level1">
-<h1 id="installpackagesdevtools">install.packages(“devtools”)<a class="anchor" aria-label="anchor" href="#installpackagesdevtools"></a>
-</h1>
-<p>devtools::install_github(“DanaNguyen18/sparseMethods”)</p>
+<p>You can install the development version of <strong>sparseMethods</strong> from GitHub using:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"DanaNguyen18/sparseMethods"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Using GitHub PAT from the git credential store.</span></span>
+<span><span class="co">#&gt; Skipping install of 'sparseMethods' from a github remote, the SHA1 (13c416c9) has not changed since last install.</span></span>
+<span><span class="co">#&gt;   Use `force = TRUE` to force installation</span></span></code></pre></div>
 <div class="section level2">
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
 <p>This is a basic example showing you the methods.</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/DanaNguyen18/sparseMethods" class="external-link">sparseMethods</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Attaching package: 'sparseMethods'</span></span>
@@ -122,14 +138,20 @@
 <span></span>
 <span><span class="co"># Plot</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-example-1.png" width="100%"></p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<p><img src="reference/figures/README-unnamed-chunk-3-1.png" width="100%"></p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
-<span><span class="co">#Show</span></span>
+<span><span class="co"># Show</span></span>
 <span><span class="fu">show</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Here is an object of class 'sparse_numeric'</span></span>
 <span><span class="co">#&gt; The length is  5Pos:Value 1 : 1, Pos:Value 3 : 3, Pos:Value 5 : 5</span></span></code></pre></div>
 </div>
+</div>
+<div class="section level1">
+<h1 id="pkgdown-website-and-license">PkgDown Website and License<a class="anchor" aria-label="anchor" href="#pkgdown-website-and-license"></a>
+</h1>
+<p>The pkgDown website can be accessed at: <a href="http://dananguyen18.github.io/sparseMethods/" class="external-link uri">http://dananguyen18.github.io/sparseMethods/</a></p>
+<p>This package is released under the MIT license.</p>
 </div>
 
   </main><aside class="col-md-3"><div class="links">
