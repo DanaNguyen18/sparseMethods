@@ -2,7 +2,6 @@
 output: github_document
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -12,48 +11,46 @@ knitr::opts_chunk$set(
 )
 ```
 
-# sparseMethods
+# Homework 6 R Package: Sparse Numeric Vector Class and Methods
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/DanaNguyen18/sparseMethods/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/DanaNguyen18/sparseMethods/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-
-
 # Description
-sparseMethods provides an S4 class, sparse_numeric, for storing numeric
-vectors by keeping only the nonzero entries and their positions, sparse vectors.
+
+`sparseMethods` provides an S4 class, `sparse_numeric`, for efficiently storing 
+numeric vectors by keeping only the nonzero entries and their positions. 
+
 The package implements:
 
-Arithmetic on sparse vectors: +, -, *
+- Custom S4 class `sparse_numeric` for sparse vectors (`value`, `pos`, `length`)
+- Arithmetic on sparse vectors: `+`, `-`, `*`
+- Sparse functions: `sparse_add()`, `sparse_sub()`, `sparse_mult()`, `sparse_crossprod()`
+- Vector summaries: `mean()`, `norm()`, `standardize()`
+- Visualization with `plot()`
+- Custom printing via `show()`
+- Full reference documentation generated using **roxygen2**
+- Automated testing framework using **testthat**
+- A **pkgdown** website for easy navigation and examples
 
-Sparse functions:
-sparse_add(),
-sparse_sub(),
-sparse_mult(),
-sparse_crossprod(),
+This package successfully passes **R CMD check** with  0 errors, 0 warnings, and 0 notes and achieves 95% test coverage.
 
-Vector summaries:
-mean(),
-norm(),
-standardize(),
-
-Visualization with plot(),
-Custom printing via show()
-
-This package demonstrates how to define S4 classes, generics, and methods in R.
 
 # Installation
-You can install the development version of sparseMethods from GitHub using:
 
+You can install the development version of **sparseMethods** from GitHub using:
 
+```{r}
 # install.packages("devtools")
 devtools::install_github("DanaNguyen18/sparseMethods")
+
+```
+
 
 ## Example
 
 This is a basic example showing you the methods. 
-
-```{r example}
+```{r}
 library(sparseMethods)
 
 # Create sparse vectors
@@ -82,7 +79,13 @@ standardize(x)
 # Plot
 plot(x, y)
 
-#Show
+# Show
 show(x)
+
 ```
 
+# PkgDown Website and License
+
+The pkgDown website can be accessed at: http://dananguyen18.github.io/sparseMethods/
+
+This package is released under the MIT license. 

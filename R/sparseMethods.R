@@ -290,8 +290,8 @@ setMethod("-", c("sparse_numeric", "sparse_numeric"), function(e1, e2) {
 #' @export
 setMethod("show", "sparse_numeric", function(object) {
   cat("Here is an object of class 'sparse_numeric'\n")
-  cat("The length is ", object@length)
-  cat(paste("Pos:Value", object@pos, ":", object@value, collapse = ", "))
+  cat("The length is ", object@length, "\n")
+  cat(paste(" Pos:Value", object@pos, ":", object@value, collapse = ", "))
 })
 
 #' Plot Two Sparse Numeric Vectors
