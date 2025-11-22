@@ -5,6 +5,7 @@
 
 <!-- badges: start -->
 
+[![check-standard](https://github.com/DanaNguyen18/sparseMethods/actions/workflows/check-standard.yaml/badge.svg)](https://github.com/DanaNguyen18/sparseMethods/actions/workflows/check-standard.yaml)
 <!-- badges: end -->
 
 # Description
