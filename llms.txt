@@ -23,7 +23,7 @@ methods in R.
 You can install the development version of sparseMethods from GitHub
 using:
 
-r \# install.packages(“devtools”)
+# install.packages(“devtools”)
 
 devtools::install_github(“DanaNguyen18/sparseMethods”)
 
