@@ -39,8 +39,16 @@ using:
 # install.packages("devtools")
 devtools::install_github("DanaNguyen18/sparseMethods")
 #> Using GitHub PAT from the git credential store.
-#> Skipping install of 'sparseMethods' from a github remote, the SHA1 (13c416c9) has not changed since last install.
-#>   Use `force = TRUE` to force installation
+#> Downloading GitHub repo DanaNguyen18/sparseMethods@HEAD
+#> ── R CMD build ─────────────────────────────────────────────────────────────────
+#>      checking for file ‘/private/var/folders/k4/qgfqzjys1_g3p4ts79shryh80000gn/T/RtmpLjCfRn/remotes80d714e22432/DanaNguyen18-sparseMethods-56f87c4/DESCRIPTION’ ...  ✔  checking for file ‘/private/var/folders/k4/qgfqzjys1_g3p4ts79shryh80000gn/T/RtmpLjCfRn/remotes80d714e22432/DanaNguyen18-sparseMethods-56f87c4/DESCRIPTION’
+#>   ─  preparing ‘sparseMethods’:
+#>    checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
+#>   ─  checking for LF line-endings in source and make files and shell scripts
+#>   ─  checking for empty or unneeded directories
+#>   ─  building ‘sparseMethods_0.0.0.9000.tar.gz’
+#>      
+#> 
 ```
 
 ## Example
@@ -62,21 +70,26 @@ y <- as(c(0, 4, 0, 2, 1), "sparse_numeric")
 # Print the sparse vectors
 x
 #> Here is an object of class 'sparse_numeric'
-#> The length is  5Pos:Value 1 : 1, Pos:Value 3 : 3, Pos:Value 5 : 5
+#> The length is  5 
+#>  Pos:Value 1 : 1,  Pos:Value 3 : 3,  Pos:Value 5 : 5
 y
 #> Here is an object of class 'sparse_numeric'
-#> The length is  5Pos:Value 2 : 4, Pos:Value 4 : 2, Pos:Value 5 : 1
+#> The length is  5 
+#>  Pos:Value 2 : 4,  Pos:Value 4 : 2,  Pos:Value 5 : 1
 
 # Arithmetic
 x + y
 #> Here is an object of class 'sparse_numeric'
-#> The length is  5Pos:Value 1 : 1, Pos:Value 2 : 4, Pos:Value 3 : 3, Pos:Value 4 : 2, Pos:Value 5 : 6
+#> The length is  5 
+#>  Pos:Value 1 : 1,  Pos:Value 2 : 4,  Pos:Value 3 : 3,  Pos:Value 4 : 2,  Pos:Value 5 : 6
 x - y
 #> Here is an object of class 'sparse_numeric'
-#> The length is  5Pos:Value 1 : 1, Pos:Value 2 : -4, Pos:Value 3 : 3, Pos:Value 4 : -2, Pos:Value 5 : 4
+#> The length is  5 
+#>  Pos:Value 1 : 1,  Pos:Value 2 : -4,  Pos:Value 3 : 3,  Pos:Value 4 : -2,  Pos:Value 5 : 4
 x * y
 #> Here is an object of class 'sparse_numeric'
-#> The length is  5Pos:Value 5 : 5
+#> The length is  5 
+#>  Pos:Value 5 : 5
 
 # Cross product (dot product)
 sparse_crossprod(x, y)
@@ -91,7 +104,8 @@ norm(x)
 # Standardization
 standardize(x)
 #> Here is an object of class 'sparse_numeric'
-#> The length is  5Pos:Value 1 : -0.412568498503517, Pos:Value 2 : -0.928279121632914, Pos:Value 3 : 0.618852747755276, Pos:Value 4 : -0.928279121632914, Pos:Value 5 : 1.65027399401407
+#> The length is  5 
+#>  Pos:Value 1 : -0.412568498503517,  Pos:Value 2 : -0.928279121632914,  Pos:Value 3 : 0.618852747755276,  Pos:Value 4 : -0.928279121632914,  Pos:Value 5 : 1.65027399401407
 
 # Plot
 plot(x, y)
@@ -104,7 +118,8 @@ plot(x, y)
 # Show
 show(x)
 #> Here is an object of class 'sparse_numeric'
-#> The length is  5Pos:Value 1 : 1, Pos:Value 3 : 3, Pos:Value 5 : 5
+#> The length is  5 
+#>  Pos:Value 1 : 1,  Pos:Value 3 : 3,  Pos:Value 5 : 5
 ```
 
 # PkgDown Website and License

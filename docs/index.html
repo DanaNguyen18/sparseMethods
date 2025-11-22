@@ -84,8 +84,16 @@
 <code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"DanaNguyen18/sparseMethods"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Using GitHub PAT from the git credential store.</span></span>
-<span><span class="co">#&gt; Skipping install of 'sparseMethods' from a github remote, the SHA1 (13c416c9) has not changed since last install.</span></span>
-<span><span class="co">#&gt;   Use `force = TRUE` to force installation</span></span></code></pre></div>
+<span><span class="co">#&gt; Downloading GitHub repo DanaNguyen18/sparseMethods@HEAD</span></span>
+<span><span class="co">#&gt; ── R CMD build ─────────────────────────────────────────────────────────────────</span></span>
+<span><span class="co">#&gt;      checking for file ‘/private/var/folders/k4/qgfqzjys1_g3p4ts79shryh80000gn/T/RtmpLjCfRn/remotes80d714e22432/DanaNguyen18-sparseMethods-56f87c4/DESCRIPTION’ ...  ✔  checking for file ‘/private/var/folders/k4/qgfqzjys1_g3p4ts79shryh80000gn/T/RtmpLjCfRn/remotes80d714e22432/DanaNguyen18-sparseMethods-56f87c4/DESCRIPTION’</span></span>
+<span><span class="co">#&gt;   ─  preparing ‘sparseMethods’:</span></span>
+<span><span class="co">#&gt;    checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information</span></span>
+<span><span class="co">#&gt;   ─  checking for LF line-endings in source and make files and shell scripts</span></span>
+<span><span class="co">#&gt;   ─  checking for empty or unneeded directories</span></span>
+<span><span class="co">#&gt;   ─  building ‘sparseMethods_0.0.0.9000.tar.gz’</span></span>
+<span><span class="co">#&gt;      </span></span>
+<span><span class="co">#&gt; </span></span></code></pre></div>
 <div class="section level2">
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
@@ -105,21 +113,26 @@
 <span><span class="co"># Print the sparse vectors</span></span>
 <span><span class="va">x</span></span>
 <span><span class="co">#&gt; Here is an object of class 'sparse_numeric'</span></span>
-<span><span class="co">#&gt; The length is  5Pos:Value 1 : 1, Pos:Value 3 : 3, Pos:Value 5 : 5</span></span>
+<span><span class="co">#&gt; The length is  5 </span></span>
+<span><span class="co">#&gt;  Pos:Value 1 : 1,  Pos:Value 3 : 3,  Pos:Value 5 : 5</span></span>
 <span><span class="va">y</span></span>
 <span><span class="co">#&gt; Here is an object of class 'sparse_numeric'</span></span>
-<span><span class="co">#&gt; The length is  5Pos:Value 2 : 4, Pos:Value 4 : 2, Pos:Value 5 : 1</span></span>
+<span><span class="co">#&gt; The length is  5 </span></span>
+<span><span class="co">#&gt;  Pos:Value 2 : 4,  Pos:Value 4 : 2,  Pos:Value 5 : 1</span></span>
 <span></span>
 <span><span class="co"># Arithmetic</span></span>
 <span><span class="va">x</span> <span class="op">+</span> <span class="va">y</span></span>
 <span><span class="co">#&gt; Here is an object of class 'sparse_numeric'</span></span>
-<span><span class="co">#&gt; The length is  5Pos:Value 1 : 1, Pos:Value 2 : 4, Pos:Value 3 : 3, Pos:Value 4 : 2, Pos:Value 5 : 6</span></span>
+<span><span class="co">#&gt; The length is  5 </span></span>
+<span><span class="co">#&gt;  Pos:Value 1 : 1,  Pos:Value 2 : 4,  Pos:Value 3 : 3,  Pos:Value 4 : 2,  Pos:Value 5 : 6</span></span>
 <span><span class="va">x</span> <span class="op">-</span> <span class="va">y</span></span>
 <span><span class="co">#&gt; Here is an object of class 'sparse_numeric'</span></span>
-<span><span class="co">#&gt; The length is  5Pos:Value 1 : 1, Pos:Value 2 : -4, Pos:Value 3 : 3, Pos:Value 4 : -2, Pos:Value 5 : 4</span></span>
+<span><span class="co">#&gt; The length is  5 </span></span>
+<span><span class="co">#&gt;  Pos:Value 1 : 1,  Pos:Value 2 : -4,  Pos:Value 3 : 3,  Pos:Value 4 : -2,  Pos:Value 5 : 4</span></span>
 <span><span class="va">x</span> <span class="op">*</span> <span class="va">y</span></span>
 <span><span class="co">#&gt; Here is an object of class 'sparse_numeric'</span></span>
-<span><span class="co">#&gt; The length is  5Pos:Value 5 : 5</span></span>
+<span><span class="co">#&gt; The length is  5 </span></span>
+<span><span class="co">#&gt;  Pos:Value 5 : 5</span></span>
 <span></span>
 <span><span class="co"># Cross product (dot product)</span></span>
 <span><span class="fu"><a href="reference/sparse_crossprod.html">sparse_crossprod</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span>
@@ -134,7 +147,8 @@
 <span><span class="co"># Standardization</span></span>
 <span><span class="fu"><a href="reference/standardize.html">standardize</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Here is an object of class 'sparse_numeric'</span></span>
-<span><span class="co">#&gt; The length is  5Pos:Value 1 : -0.412568498503517, Pos:Value 2 : -0.928279121632914, Pos:Value 3 : 0.618852747755276, Pos:Value 4 : -0.928279121632914, Pos:Value 5 : 1.65027399401407</span></span>
+<span><span class="co">#&gt; The length is  5 </span></span>
+<span><span class="co">#&gt;  Pos:Value 1 : -0.412568498503517,  Pos:Value 2 : -0.928279121632914,  Pos:Value 3 : 0.618852747755276,  Pos:Value 4 : -0.928279121632914,  Pos:Value 5 : 1.65027399401407</span></span>
 <span></span>
 <span><span class="co"># Plot</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code></pre></div>
@@ -144,7 +158,8 @@
 <span><span class="co"># Show</span></span>
 <span><span class="fu">show</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Here is an object of class 'sparse_numeric'</span></span>
-<span><span class="co">#&gt; The length is  5Pos:Value 1 : 1, Pos:Value 3 : 3, Pos:Value 5 : 5</span></span></code></pre></div>
+<span><span class="co">#&gt; The length is  5 </span></span>
+<span><span class="co">#&gt;  Pos:Value 1 : 1,  Pos:Value 3 : 3,  Pos:Value 5 : 5</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level1">
