@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-[![check-standard](https://github.com/DanaNguyen18/sparseMethods/actions/workflows/check-standard.yaml/badge.svg)](https://github.com/DanaNguyen18/sparseMethods/actions/workflows/check-standard.yaml)
+[![R-CMD-check](https://github.com/DanaNguyen18/sparseMethods/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/DanaNguyen18/sparseMethods/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 # Description
@@ -31,7 +31,7 @@ methods in R.
 You can install the development version of sparseMethods from GitHub
 using:
 
-r \# install.packages(“devtools”)
+# install.packages(“devtools”)
 
 devtools::install_github(“DanaNguyen18/sparseMethods”)
 
